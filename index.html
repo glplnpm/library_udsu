@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Научная библиотека УдГУ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo2.png" alt="Логотип УдГУ">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Главное</a></li>
+                    <li class="dropdown">
+                        <a href="#infoResource">Информационные ресурсы</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#resource1">Электронный каталог</a></li>
+                            <li><a href="#resource1">Ресурсы интернета</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#personal">Личный кабинет</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#personal1">Мои книги</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#elibrary">"Электронная библиотека"</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#elibrary1">УдНОЭБ</a></li>
+                            <li><a href="#elibrary2">Президентская библиотека им. Б.Н. Ельцина</a></li>
+                            <li><a href="#elibrary3">Электронные библиотечные системы</a></li>
+                            <li><a href="#elibrary4">Электронная библиотека диссертаций РГБ</a></li>
+                            <li><a href="#elibrary5">Доступ к Базам данных научной информации</a></li>
+                            <li><a href="#elibrary4">Электронные газеты и журналы</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#about">О библиотеке</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#about1">Общие сведения</a></li>
+                            <li><a href="#about2">Структура библиотеки и график работы</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Поисковая строка -->
+    <div class="search-container">
+        <input type="text" placeholder="Поиск по библиотеке">
+        <button type="submit">Найти</button>
+    </div>
+
+    <!-- Квадратики -->
+    <div class="additional-links">
+        <a href="#resources">Информационные ресурсы</a>
+        <a href="#catalogs">Каталоги библиотеки</a>
+        <a href="#services">Помощь библиографа</a>
+    </div>
+
+    <!-- Заголовок блока с новостями и событиями -->
+    <h2 class="news-title">Новости и события</h2>
+
+    <div class="news-events">
+        <div class="slider">
+            <button class="prev">&#10094;</button>
+            <div class="events-wrapper">
+                <div class="event">
+                    <img src="img/event1.jpg" alt="Новость 1">
+                    <div class="event-info">
+                        <h3>Название события 1</h3>
+                        <p class="event-date">01.01.2024</p>
+                        <p>Описание новости или события 1</p>
+                    </div>
+                </div>
+                
+                
+                <div class="event">
+                    <img src="img/event2.jpg" alt="Новость 2">
+                    <div class="event-info">
+                        <h3>Название события 2</h3>
+                        <p class="event-date">02.02.2024</p>
+                        <p>Описание новости или события 2</p>
+                    </div>
+                </div>
+                <!-- Добавьте другие новости или события здесь -->
+            </div>
+            <button class="next">&#10095;</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Научная библиотека УдГУ. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
