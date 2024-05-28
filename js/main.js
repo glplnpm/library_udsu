@@ -31,3 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showEvent(currentIndex);
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("projects-button").addEventListener("click", function(event) {
+        event.preventDefault(); // Отменяем стандартное поведение ссылки
+        window.location.href = "projects.html"; // Переход на страницу projects.html
+    });
+});
