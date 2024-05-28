@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -54,5 +54,77 @@
     </footer>
 
     <script src="js/main.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталоги библиотеки</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .book {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .book h2 {
+            margin: 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Каталоги библиотеки</h1>
+
+    <form action="catalogs.php" method="GET">
+        <input type="text" name="query" placeholder="Поиск по названию книги или автору">
+        <button type="submit">Поиск</button>
+    </form>
+
+    <?php
+    if (isset($_GET['query'])) {
+        $query = $_GET['query'];
+
+        // Подключение к базе данных
+        $conn = new mysqli("localhost", "root", "", "library");
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // Выполнение поиска
+        $sql = "SELECT * FROM books WHERE title LIKE '%$query%' OR author LIKE '%$query%'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // Вывод результатов
+            while($row = $result->fetch_assoc()) {
+                echo "<div class='book'>";
+                echo "<h2>" . $row["title"] . "</h2>";
+                echo "<p>Автор: " . $row["author"] . "</p>";
+                echo "<p>Год: " . $row["year"] . "</p>";
+                echo "<p>Тематика: " . $row["subject"] . "</p>";
+                echo "</div>";
+            }
+        } else {
+            echo "Результатов не найдено.";
+        }
+
+        $conn->close();
+    }
+    ?>
 </body>
 </html>
